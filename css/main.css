@@ -767,7 +767,7 @@ a {
     background: rgba(193, 209, 235, 1);
   }
 
-  .e-u-reviews-img {
+  .e-u-features-img {
     width: 50px;
     height: 50px;
 
@@ -788,7 +788,7 @@ a {
     font-size: 20px;
     text-align: left;
   }
-  .e-u-reviews-img {
+  .e-u-features-img {
     opacity: 0;
     height: 0;
     transition: opacity 0.3s ease;
