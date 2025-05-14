@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const menuBtnRef = document.querySelector("[data-menu-button]");
-  const navListRef = document.querySelector(".e-t-navigation-list");
-  const headerRef = document.querySelector(".e-t-header");
-  const navigationRef = document.querySelector(".e-t-navigation");
+  const navListRef = document.querySelector(".e-u-navigation-list");
+  const headerRef = document.querySelector(".e-u-header");
+  const navigationRef = document.querySelector(".e-u-navigation");
 
   menuBtnRef.addEventListener("click", () => {
     menuBtnRef.classList.toggle("is-open");
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     navigationRef.classList.toggle("is-open");
   });
 
-  document.querySelectorAll(".e-t-navigation-link").forEach((n) =>
+  document.querySelectorAll(".e-u-navigation-link").forEach((n) =>
     n.addEventListener("click", () => {
       navListRef.classList.remove("is-open");
       menuBtnRef.classList.remove("is-open");
@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 });
 document.addEventListener("DOMContentLoaded", () => {
-  const galleryList = document.querySelector(".e-t-gallery-list");
-  const items = galleryList.querySelectorAll(".e-t-gallery-item");
+  const galleryList = document.querySelector(".e-u-gallery-list");
+  const items = galleryList.querySelectorAll(".e-u-gallery-item");
   const button = document.getElementById("show-more-btn");
 
   items.forEach((item, index) => {
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     button.style.display = "none";
   });
 });
-const images = document.querySelectorAll(".e-t-gallery-image");
+const images = document.querySelectorAll(".e-u-gallery-image");
 const overlay = document.querySelector(".overlay");
 const overlayImage = document.querySelector(".overlay-image");
 
@@ -53,7 +53,7 @@ overlay.addEventListener("click", () => {
 
 function toggleAnswer(element) {
   const answer = element.nextElementSibling;
-  const buttonImg = element.querySelector(".e-t-toggle-button img");
+  const buttonImg = element.querySelector(".e-u-toggle-button img");
 
   if (answer.style.display === "none" || answer.style.display === "") {
     answer.style.display = "block";
