@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     navigationRef.classList.toggle("is-open");
   });
 
-  document.querySelectorAll(".navigation__link").forEach((n) =>
+  document.querySelectorAll(".e-t-navigation-link").forEach((n) =>
     n.addEventListener("click", () => {
       navListRef.classList.remove("is-open");
       menuBtnRef.classList.remove("is-open");
@@ -20,11 +20,35 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   );
 });
-document.querySelectorAll(".e-t-why-item").forEach((item) => {
-  item.addEventListener("click", () => {
-    const card = item.querySelector(".card");
-    card.classList.toggle("flipped");
+document.addEventListener("DOMContentLoaded", () => {
+  const galleryList = document.querySelector(".e-t-gallery-list");
+  const items = galleryList.querySelectorAll(".e-t-gallery-item");
+  const button = document.getElementById("show-more-btn");
+
+  items.forEach((item, index) => {
+    if (index < 3) {
+      item.classList.add("visible");
+    }
   });
+
+  button.addEventListener("click", () => {
+    items.forEach((item) => item.classList.add("visible"));
+    button.style.display = "none";
+  });
+});
+const images = document.querySelectorAll(".e-t-gallery-image");
+const overlay = document.querySelector(".overlay");
+const overlayImage = document.querySelector(".overlay-image");
+
+images.forEach((image) => {
+  image.addEventListener("click", () => {
+    overlayImage.src = image.src;
+    overlay.classList.remove("hidden");
+  });
+});
+
+overlay.addEventListener("click", () => {
+  overlay.classList.add("hidden");
 });
 
 function toggleAnswer(element) {
@@ -33,10 +57,10 @@ function toggleAnswer(element) {
 
   if (answer.style.display === "none" || answer.style.display === "") {
     answer.style.display = "block";
-    buttonImg.src = "/img/Minus.png";
+    buttonImg.style.transform = "rotate(45deg)";
   } else {
     answer.style.display = "none";
-    buttonImg.src = "/img/Add.png";
+    buttonImg.style.transform = "rotate(90deg)";
   }
 }
 
